@@ -1,5 +1,5 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
 const genAI = new GoogleGenerativeAI("AIzaSyBGXmWqH9gsjyiTXJCBPLg2s8jgU7YNhU4");
 
@@ -17,7 +17,7 @@ async function chat(data: any) {
   return textt;
 }
 
-export async function POST(req: NextResponse) {
+export async function POST(req: NextRequest) {
   const body = await req.json();
   const result = await chat(body);
   return new Response(result, {
