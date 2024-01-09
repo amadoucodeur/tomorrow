@@ -7,9 +7,8 @@ async function chat(data: any) {
   const lang = data.lang;
   const text = data.text;
   const prompt = `
-  Traduisez le texte suivant de la langue source vers la langue cible, sans commentaire.
+  Corrige le texte suivant dans la lague ou il est ecrit, sans commentaire.
   Texte à traduire : ${text}
-  Langue cible : ${lang}
   `;
   const model = genAI.getGenerativeModel({ model: "gemini-pro" });
 
