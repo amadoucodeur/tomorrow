@@ -4,10 +4,9 @@ import { NextResponse } from "next/server";
 const genAI = new GoogleGenerativeAI("AIzaSyBGXmWqH9gsjyiTXJCBPLg2s8jgU7YNhU4");
 
 async function chat(data: any) {
-  const lang = data.lang;
   const text = data.text;
   const prompt = `
-  Corrige le texte suivant dans la lague ou il est ecrit, sans commentaire.
+  Corrige le texte suivant dans sa langue, sans commentaire.
   Texte à traduire : ${text}
   `;
   const model = genAI.getGenerativeModel({ model: "gemini-pro" });

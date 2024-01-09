@@ -13,12 +13,11 @@ export default function page() {
     document.execCommand("copy");
     window.getSelection().removeAllRanges();
   };
-  const traducteur = async () => {
+  const corrige = async () => {
     if (textEnter.current.value) {
-      const result = await fetch("/api/traducteur", {
+      const result = await fetch("/api/correcteur", {
         method: "POST",
         body: JSON.stringify({
-          lang: languageChoosed.current.value,
           text: textEnter.current.value,
         }),
       });
@@ -28,7 +27,7 @@ export default function page() {
     }
   };
   return (
-    <main className="w-full flex flex-col items-center">
+    <main className="w-full flex flex-col items-center p-6 overflow-y-auto h-screen">
       <h1 className="text-4xl font-bold mb-2 self-start">
         Tomorrow Correcteur
       </h1>
@@ -49,6 +48,12 @@ export default function page() {
             className="transition duration-300 hover:bg-slate-700 mx-1 bg-slate-600 text-white rounded  p-1"
           >
             Effacer
+          </button>
+          <button
+            onClick={corrige}
+            className="transition duration-300 hover:bg-slate-700 mx-1 bg-slate-600 text-white rounded  p-1"
+          >
+            Corriger
           </button>
           <button
             onClick={copy}

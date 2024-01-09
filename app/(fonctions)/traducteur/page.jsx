@@ -57,7 +57,7 @@ export default function page() {
     }
   };
   return (
-    <main className="w-full flex flex-col items-center p-6">
+    <main className="w-full flex flex-col items-center p-6 overflow-y-auto h-screen">
       <h1 className="text-4xl font-bold mb-2 self-start">
         Tomorrow Traducteur
       </h1>

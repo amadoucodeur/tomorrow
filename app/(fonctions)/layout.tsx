@@ -4,8 +4,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <main className="grid grid-cols-[250px,1fr] w-full">
-      <ul className="flex flex-col p-2 bg-black fixed">
+    <main className=" fixed grid grid-cols-[250px,1fr] w-full">
+      <ul className="flex flex-col p-2 bg-black">
         <li className="m-2 font-bold text-center text-2xl">
           <a href="/">Trow</a>
         </li>
